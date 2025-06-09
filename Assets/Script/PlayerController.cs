@@ -9,13 +9,14 @@ public class PlayerController : MonoBehaviour
     public Vector2 Direction { get; private set; }
     private Rigidbody2D rb;
 
-
+    private Animator anim;
 
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -30,6 +31,9 @@ public class PlayerController : MonoBehaviour
         verticalDir = Input.GetAxis("Vertical");
         Direction = new Vector2(horizontalDir, verticalDir).normalized;
         rb.velocity = Direction * (speed + Time.deltaTime);
+        anim.SetFloat("xDir", Direction.x);
+        anim.SetFloat("yDir", Direction.x);
+
 
     }
 }
