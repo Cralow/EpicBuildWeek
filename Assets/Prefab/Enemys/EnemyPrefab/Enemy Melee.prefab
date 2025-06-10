@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5962180798350795786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 393957971907948907, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: breathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 804302fd1ec196b4d9155163e5614b0c, type: 3}
+    - target: {fileID: 393957971907948907, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: attkMeleeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 210b9a7b0a73f7a4288cc516afd9a8a0, type: 3}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490437105698596995, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490437105698596995, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: enemyTypeAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490437105698596995, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: enemyTypeMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663364704488428595, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574225761548315333, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8232985
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574225761548315333, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16470587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574225761548315333, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830135008974982562, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777829698985214141, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Name
+      value: Enemy Melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777829698985214141, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
