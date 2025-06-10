@@ -28,8 +28,6 @@ public class EnemyMovement : MonoBehaviour
     private float rangeRandomX;
     private float rangeRandomY;
 
-    private PlayerController playerController;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
     }
     public void PositionOnTarget(PlayerController pc)
     {
+        if (pc == null) return;
         Vector3 posPlayer = pc.transform.position;
         setCicle.Set(Mathf.Cos(angle) * circleRadius,// X
                      Mathf.Sin(angle) * circleRadius,// Y
@@ -57,6 +56,7 @@ public class EnemyMovement : MonoBehaviour
     }
     public void MoveOnPosition(PlayerController pc)
     {
+        if (pc == null) return;
         Vector3 posPlayer = pc.transform.position;
         Vector2 posTarget = (posPlayer - transform.position).normalized;  
 
@@ -72,6 +72,7 @@ public class EnemyMovement : MonoBehaviour
     }
     public void MoveOnTarget(PlayerController pc)
     {
+        if (pc == null) return;
         Vector2 posTarget = (pc.transform.position - transform.position).normalized;
         rb.MovePosition(rb.position + posTarget * (speed * Time.fixedDeltaTime));
     }
@@ -103,26 +104,5 @@ public class EnemyMovement : MonoBehaviour
 
         rangeRandomX = Random.Range(5, 10);
         rangeRandomY = Random.Range(5, 10);
-    }
-
-
-    public void GetPc(PlayerController pc)
-    {
-        playerController = pc;
-    }
-    private void OnDrawGizmos()
-    {
-        if (playerController == null) return;
-
-        Vector3 posCicle = new Vector3(
-            Mathf.Cos(angle) * circleRadius,
-            Mathf.Sin(angle) * circleRadius,
-            0
-        );
-
-        Vector3 posTarget = playerController.transform.position + posCicle;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(posTarget, 0.1f);
     }
 }

@@ -26,6 +26,7 @@ public class EnemyAttack : MonoBehaviour
     }
     public void ShootCloseOnTarget(PlayerController pc)
     {
+        if (pc == null) return;
         EnemyBullet bullet = Instantiate(bulletPreFab,transform.position,Quaternion.identity);
 
         Vector3 randomPos = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3));
@@ -37,6 +38,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void TryShootCloseOnTarget(PlayerController pc)
     {
+        if(pc == null) return;
         bool canShoot = Time.time  - lastShootTimer >= fireRate;
         float dist = Vector2.Distance(transform.position, pc.transform.position);
 
@@ -58,16 +60,16 @@ public class EnemyAttack : MonoBehaviour
 
     private void DoDamageToPlayerOnSuicide(Collision2D collision,int damage)
     {
-        //LifeController life = collision.GetComponent<LifeController>();
-        //if(life !=) Do Damage
+        LifeController life = collision.collider.GetComponent<LifeController>();
+        if (life != null) life.AddHp(-damageExplosion);
 
         enemyAudio.AttkSuicideSound();
         Debug.Log("Make Damage on Touch " + damage);
     }
     private void DoDamageToPlayerAttckMelee(Collider2D collider, int damage)
     {
-        //LifeController life = collision.GetComponent<LifeController>();
-        //if(life !=) Do Damage
+        LifeController life = collider.GetComponent<LifeController>();
+        if(life !=null) life.AddHp(-damageMelee);
 
         enemyAudio.AttkMeleeSound();
         Debug.Log("Make Damage on Touch " + damage);

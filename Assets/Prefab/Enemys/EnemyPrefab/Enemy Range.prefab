@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2562690379999262650, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: lifeBehaviour
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5952026436927725466, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
       propertyPath: m_Name
       value: Enemy Range

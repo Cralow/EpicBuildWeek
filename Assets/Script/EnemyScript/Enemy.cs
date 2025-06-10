@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour
         enemyMovement = GetComponent<EnemyMovement>();
         enemyAttack = GetComponent<EnemyAttack>();
         playerController = FindAnyObjectByType<PlayerController>();
-        enemyMovement.GetPc(playerController);
     }
 
     private void Update()

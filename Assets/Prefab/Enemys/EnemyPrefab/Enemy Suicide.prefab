@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1867072830656896926, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: lifeBehaviour
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2450519345989000220, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: randomVelocity
       value: 1

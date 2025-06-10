@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: attkMeleeSound
       value: 
       objectReference: {fileID: 8300000, guid: 210b9a7b0a73f7a4288cc516afd9a8a0, type: 3}
+    - target: {fileID: 1943654223813699741, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+      propertyPath: lifeBehaviour
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4261407612904714221, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

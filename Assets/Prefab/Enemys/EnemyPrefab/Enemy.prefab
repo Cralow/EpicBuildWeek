@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 2450519345989000220}
   - component: {fileID: -5873592320380155949}
   - component: {fileID: 461492927022859880}
+  - component: {fileID: 1867072830656896926}
   - component: {fileID: 6686106797861104516}
   m_Layer: 7
   m_Name: Enemy
@@ -343,6 +344,20 @@ MonoBehaviour:
   breathSound: {fileID: 0}
   attkMeleeSound: {fileID: 0}
   attkSuicedeSound: {fileID: 0}
+--- !u!114 &1867072830656896926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557168852400043966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94e1968c92274e4097b8bf3fb0a7225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 5
+  lifeBehaviour: 0
 --- !u!82 &6686106797861104516
 AudioSource:
   m_ObjectHideFlags: 0
