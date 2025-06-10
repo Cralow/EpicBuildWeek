@@ -20,6 +20,10 @@ TagManager:
   - Goal
   - 
   - 
+  - EnemyMelee
+  - EnemyRange
+  - EnemySuicide
+  - EnemyBullet
   - 
   - 
   - 

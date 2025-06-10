@@ -26,7 +26,11 @@ public class EnemyBullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //LifeController life = collision.collider.GetComponent<LifeController>();
+        if(collision.collider.tag == "Player")
+        {
+            LifeController life = collision.collider.GetComponent<LifeController>();
+            life.AddHp(-damage);
+        }
 
         if (sfxImpact != null) Instantiate(sfxImpact, transform.position, Quaternion.identity);
 
