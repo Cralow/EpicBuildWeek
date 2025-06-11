@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("PickUp"))
         {
             var item = Instantiate(collision.gameObject, wH.shootPosition.parent);
-            item.GetComponent<SpriteRenderer>().enabled = false;
+            //item.GetComponent<SpriteRenderer>().enabled = false;
 
            Destroy(collision.gameObject);   
         }

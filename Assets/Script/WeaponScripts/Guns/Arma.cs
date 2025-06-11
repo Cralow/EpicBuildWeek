@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PlayerGun : MonoBehaviour
+public class Arma : MonoBehaviour
 {
-
     public Transform bullet;
     [SerializeField] float weaponRange;
-    private GameObject savedEnemyObj;
+    public GameObject savedEnemyObj;
 
 
 
 
-
-    [SerializeField] float fireRate;
+     public float fireRate;
     public float fireCoolDown;
     public float gunDamage;
+    public float shootForce;
 
 
     void Update()
@@ -25,25 +23,29 @@ public class PlayerGun : MonoBehaviour
 
         if (fireCoolDown <= 0f)
         {
-            Shoot();
 
-            fireCoolDown = fireRate;
+                 Shoot();
+                fireCoolDown = fireRate;
+            
+
+
 
 
 
         }
     }
-    void Shoot()
+    public virtual void Shoot()
     {
         FindNearestEnemy();
         if (savedEnemyObj != null)
         {
-            var a = Instantiate(bullet, new Vector2(transform.position.x, transform.position.y), transform.rotation);
-            a.GetComponent<Rigidbody2D>().AddForce(savedEnemyObj.transform.position,ForceMode2D.Impulse);
+            var a = Instantiate(bullet, transform);
+            Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
+            a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
 
 
         }
- 
+
 
     }
 
@@ -67,11 +69,11 @@ public class PlayerGun : MonoBehaviour
 
                 if (distanzaAttuale < distanza2)
                 {
-                    if(distanzaAttuale < weaponRange)
+                    if (distanzaAttuale < weaponRange)
                     {
-                    distanza2 = distanzaAttuale;
+                        distanza2 = distanzaAttuale;
 
-                    savedEnemyObj = go;
+                        savedEnemyObj = go;
 
                     }
                     else
@@ -89,9 +91,8 @@ public class PlayerGun : MonoBehaviour
         }
 
         return savedEnemyObj;
-     
+
 
 
     }
-
 }
