@@ -21,10 +21,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float minCircleRadius = 4f;
     [SerializeField] private float maxCircleRadius = 10f;
 
-    private Rigidbody2D rb;
+    public Vector2 direction {  get; private set; }
     private Vector3 setCicle;
+
+    private Rigidbody2D rb;
+
     private float angle;
-    private float factor;
+    private float randomFactorPosition;
     private float rangeRandomX;
     private float rangeRandomY;
 
@@ -43,38 +46,43 @@ public class EnemyMovement : MonoBehaviour
     public void PositionOnTarget(PlayerController pc)
     {
         if (pc == null) return;
+
         Vector3 posPlayer = pc.transform.position;
         setCicle.Set(Mathf.Cos(angle) * circleRadius,// X
                      Mathf.Sin(angle) * circleRadius,// Y
                                                   0);// Z
 
         Vector3 posTarget = posPlayer + setCicle;
-        Vector2 dir = (posTarget - transform.position).normalized;
+        direction = (posTarget - transform.position).normalized;
 
-        rb.MovePosition(rb.position + dir * (speed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
         angle += Time.fixedDeltaTime * rotationSpeed;
     }
     public void MoveOnPosition(PlayerController pc)
     {
         if (pc == null) return;
+
         Vector3 posPlayer = pc.transform.position;
         Vector2 posTarget = (posPlayer - transform.position).normalized;  
 
         Vector3 posPlayerAround = pc.transform.position;
-        posPlayerAround.x += factor * rangeRandomX; posPlayerAround.y += factor * rangeRandomY;
+        posPlayerAround.x += randomFactorPosition * rangeRandomX; 
+        posPlayerAround.y += randomFactorPosition * rangeRandomY;
 
         Vector2 posTargetAround = (posPlayerAround - transform.position).normalized;
-
         float dist = Vector2.Distance(transform.position, posPlayer);
 
-        if (dist >= maxDistanceTarget + 1) rb.MovePosition(rb.position + posTargetAround * (speed * Time.fixedDeltaTime));
-        if (dist <= minDistanceTarget - 1) rb.MovePosition(rb.position - posTarget * (speed * Time.fixedDeltaTime));
+        direction = dist >= maxDistanceTarget + 1 == true? posTargetAround : posTarget;
+
+        if (dist >= maxDistanceTarget + 1) rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
+        if (dist <= minDistanceTarget - 1) rb.MovePosition(rb.position - direction * (speed * Time.fixedDeltaTime));
     }
     public void MoveOnTarget(PlayerController pc)
     {
         if (pc == null) return;
-        Vector2 posTarget = (pc.transform.position - transform.position).normalized;
-        rb.MovePosition(rb.position + posTarget * (speed * Time.fixedDeltaTime));
+
+        direction = (pc.transform.position - transform.position).normalized;
+        rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
     }
     private void RandomVelocity()
     {
@@ -87,20 +95,19 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!randomCicle) return;
 
-        float factor = Random.Range(0, 2) == 0 ? -1f : 1f;
-
-        rotationSpeed = factor * Random.Range(0.25f, 0.75f);
+        float randomFactorCicle = Random.Range(0, 2) == 0 ? -1f : 1f;
+        rotationSpeed = randomFactorCicle * Random.Range(0.25f, 0.75f);
 
         circleRadius = 0;
         circleRadius += Random.Range(minCircleRadius, maxCircleRadius);
 
         rotationSpeed = speed / circleRadius;
-        rotationSpeed *= factor;
+        rotationSpeed *= randomFactorCicle;
     }
 
     private void RandomRangePosOnTarget()
     {
-        factor = Random.Range(0, 2) == 0 ? -1f : 1f;
+        randomFactorPosition = Random.Range(0, 2) == 0 ? -1f : 1f;
 
         rangeRandomX = Random.Range(5, 10);
         rangeRandomY = Random.Range(5, 10);

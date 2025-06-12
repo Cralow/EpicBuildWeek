@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum EnemyType {None = 0, Melee = 1, Suicide = 2, Range = 3}
+    public enum EnemyType {None = 0, Melee = 1, Suicide = 2, Range = 3, Boss = 4}
     [SerializeField] private EnemyType enemyTypeMovement;
     [SerializeField] private EnemyType enemyTypeAttack;
 
     private EnemyMovement enemyMovement;
     private EnemyAttack enemyAttack;
     private PlayerController playerController;
+    private Animator anim;
 
     private void Start()
     {
         enemyMovement = GetComponent<EnemyMovement>();
         enemyAttack = GetComponent<EnemyAttack>();
+        anim = GetComponentInChildren<Animator>();
+
         playerController = FindAnyObjectByType<PlayerController>();
+
+        enemyAttack.SetEnemyAttack(enemyTypeAttack);
     }
 
     private void Update()
     {
+        anim.SetFloat("xDir", enemyMovement.direction.x);
+
         EnemyLogicAttack();
     }
     private void FixedUpdate()
@@ -30,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void EnemyLogicAttack()
     {
-        switch (enemyTypeMovement)
+        switch (enemyTypeAttack)
         {
             default:
                 Debug.Log("Empty");
@@ -47,6 +54,12 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyType.Range:
                 Debug.Log("Do Range Attack");
+                enemyAttack.OnAttackMelee();
+                enemyAttack.TryShootCloseOnTarget(playerController);
+                break;
+            case EnemyType.Boss:
+                Debug.Log("Do Boss Attack");
+                enemyAttack.OnAttackMelee();
                 enemyAttack.TryShootCloseOnTarget(playerController);
                 break;
         }
@@ -73,14 +86,10 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Do Range Movement");
                 enemyMovement.MoveOnPosition(playerController);
                 break;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.GetComponent<PlayerController>() == playerController)
-        {
-            if (enemyTypeMovement == EnemyType.Suicide) enemyAttack.DoSuicideExplosion(collision);
+            case EnemyType.Boss:
+                Debug.Log("Do Boss Movement");
+                enemyMovement.PositionOnTarget(playerController);
+                break;
         }
     }
 }

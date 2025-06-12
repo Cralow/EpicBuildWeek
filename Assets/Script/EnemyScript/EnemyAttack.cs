@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Enemy;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -10,20 +11,28 @@ public class EnemyAttack : MonoBehaviour
 
     [Header("Range Option")]
     [SerializeField] private EnemyBullet bulletPreFab;
+    [SerializeField] private int damageBullet = 5;
+    [SerializeField] private float speedBullet = 5;
     [SerializeField] float fireRate = 0.5f;
 
     [Header("Suicide Option")]
     [SerializeField] int damageExplosion = 20;
 
     private float lastShootTimer = 0f;
-
     private float lastTimeAttkMelee = 0;
+
     private bool canAttkMelee;
+
     private EnemyAudio enemyAudio;
+    private EnemyType enemyTypeAttack;
+
     private void Start()
     {
         enemyAudio = GetComponent<EnemyAudio>();
     }
+
+    public void SetEnemyAttack(EnemyType enemyAttack) => enemyTypeAttack = enemyAttack;
+
     public void ShootCloseOnTarget(PlayerController pc)
     {
         if (pc == null) return;
@@ -33,6 +42,9 @@ public class EnemyAttack : MonoBehaviour
         Vector3 randomPosTarget = pc.transform.position + randomPos;    
 
         bullet.BulletPositionDirection(randomPosTarget - transform.position);
+        bullet.DamageBullet = damageBullet;
+        bullet.SpeedBullet = speedBullet;
+
         lastShootTimer = Time.time;
     }
 
@@ -53,10 +65,7 @@ public class EnemyAttack : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnAttackMelee()
-    {
-        canAttkMelee = Time.time - lastTimeAttkMelee >= timerAttkMelee;
-    }
+    public void OnAttackMelee() => canAttkMelee = Time.time - lastTimeAttkMelee >= timerAttkMelee;
 
     private void DoDamageToPlayerOnSuicide(Collision2D collision,int damage)
     {
@@ -73,6 +82,14 @@ public class EnemyAttack : MonoBehaviour
 
         enemyAudio.AttkMeleeSound();
         Debug.Log("Make Damage on Touch " + damage);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.GetComponent<PlayerController>())
+        {
+            if (enemyTypeAttack == EnemyType.Suicide) DoSuicideExplosion(collision);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collider)

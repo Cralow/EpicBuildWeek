@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2919318939999415435}
   - component: {fileID: -2215926066317646005}
   - component: {fileID: -5360919793449027495}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Bullet Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8087662657807615150}
   - component: {fileID: 4587370930478293155}
   - component: {fileID: 4540179247822952653}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: RefBullEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
