@@ -66,7 +66,8 @@ public class EnemyAttack : MonoBehaviour
     {
         DoDamageToPlayerOnSuicide(collision, damageExplosion);
 
-        Destroy(gameObject);
+        LifeController life = GetComponent<LifeController>();
+        life.AddHp(-life.life);
     }
 
     public void OnAttackMelee() => canAttkMelee = Time.time - lastTimeAttkMelee >= timerAttkMelee;
