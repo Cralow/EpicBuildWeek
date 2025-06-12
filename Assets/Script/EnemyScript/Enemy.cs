@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
         playerController = FindAnyObjectByType<PlayerController>();
 
+        enemyAttack.playerController = playerController;
         enemyAttack.SetEnemyAttack(enemyTypeAttack);
     }
 

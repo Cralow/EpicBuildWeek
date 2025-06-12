@@ -18,6 +18,9 @@ public class EnemyAttack : MonoBehaviour
     [Header("Suicide Option")]
     [SerializeField] int damageExplosion = 20;
 
+    [Header("General Option")]
+    public PlayerController playerController;
+
     private float lastShootTimer = 0f;
     private float lastTimeAttkMelee = 0;
 
@@ -25,6 +28,7 @@ public class EnemyAttack : MonoBehaviour
 
     private EnemyAudio enemyAudio;
     private EnemyType enemyTypeAttack;
+    private LifeController lifeController;
 
     private void Start()
     {
@@ -69,17 +73,19 @@ public class EnemyAttack : MonoBehaviour
 
     private void DoDamageToPlayerOnSuicide(Collision2D collision,int damage)
     {
-        LifeController life = collision.collider.GetComponent<LifeController>();
-        if (life != null) life.AddHp(-damageExplosion);
+        if (playerController != null) 
+        lifeController = collision.collider.GetComponent<LifeController>();
 
+        lifeController.AddHp(-damageExplosion);
         enemyAudio.AttkSuicideSound();
         Debug.Log("Make Damage on Touch " + damage);
     }
     private void DoDamageToPlayerAttckMelee(Collider2D collider, int damage)
     {
-        LifeController life = collider.GetComponent<LifeController>();
-        if(life !=null) life.AddHp(-damageMelee);
+        if (playerController != null) 
+        lifeController = collider.GetComponent<LifeController>();
 
+        lifeController.AddHp(-damageMelee);
         enemyAudio.AttkMeleeSound();
         Debug.Log("Make Damage on Touch " + damage);
     }
