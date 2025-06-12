@@ -5,28 +5,27 @@ using UnityEngine;
 public class FucileAPompa : Arma
 {
     public int pelletsPerShot = 7;
-    public float spreadAngle = 15f; // Angolo totale di apertura (in gradi)
+    public float spreadAngle = 15f; 
 
     public override void Shoot()
     {
         FindNearestEnemy();
 
-        if (savedEnemyObj == null) return;
+        if (savedEnemyObj == null)return;
 
-        // Direzione centrale verso il nemico
-        Vector2 baseDirection = (savedEnemyObj.transform.position - transform.position).normalized;
+
+        Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
 
         for (int i = 0; i < pelletsPerShot; i++)
         {
-            // Calcola un angolo random attorno alla direzione base
+
             float randomAngle = Random.Range(-spreadAngle / 2f, spreadAngle / 2f);
 
-            // Ruota la direzione base
-            Vector2 spreadDir = Quaternion.Euler(0, 0, randomAngle) * baseDirection;
+            Vector2 spreadDir = Quaternion.Euler(0, 0, randomAngle) * fireDirection;
 
-            // Istanzia e spara il pellet
-            var pellet = Instantiate(bullet, transform.position, Quaternion.identity);
-            pellet.GetComponent<Rigidbody2D>().AddForce(spreadDir * shootForce, ForceMode2D.Impulse);
+            var a = Instantiate(bullet, transform);
+
+            a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
         }
     }
 }

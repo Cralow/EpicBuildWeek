@@ -25,8 +25,6 @@ public class LifeController : MonoBehaviour
             //animazione death comune enemys e player
            // GetComponent<Animator>().Play("Death");
             
-
-
         }
 
     }
@@ -118,13 +116,7 @@ public class LifeController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (isEnemy && collision.transform.tag == "Gun")
-        //{
-        //    danno = collision.gameObject.GetComponent<Bullet>().bDmg;
-        //    Destroy(collision.gameObject);
-        //    gameObject.GetComponent<Animator>().Play("EnemyHitted");
-        //    AddHp(-danno);
-        //}
+
 
         if (!isEnemy && collision.transform.tag == "Enemy")
         {

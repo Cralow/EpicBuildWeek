@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Fucile : Arma
 {
-    public float burstDelay = 0.1f; // Ritardo tra un colpo e l'altro nella raffica
+    public float burstDelay = 0.1f; 
 
     public override void Shoot()
     {
@@ -20,7 +20,8 @@ public class Fucile : Arma
         {
             for (int i = 0; i < 3; i++)
             {
-                var a = Instantiate(bullet, transform.position, Quaternion.identity); 
+
+                var a = Instantiate(bullet, transform);
                 Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
                 a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
 
