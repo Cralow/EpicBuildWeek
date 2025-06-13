@@ -18,9 +18,6 @@ public class EnemyAttack : MonoBehaviour
     [Header("Suicide Option")]
     [SerializeField] int damageExplosion = 20;
 
-    [Header("General Option")]
-    public PlayerController playerController;
-
     private float lastShootTimer = 0f;
     private float lastTimeAttkMelee = 0;
 
@@ -28,7 +25,6 @@ public class EnemyAttack : MonoBehaviour
 
     private EnemyAudio enemyAudio;
     private EnemyType enemyTypeAttack;
-    private LifeController lifeController;
 
     private void Start()
     {
@@ -37,10 +33,12 @@ public class EnemyAttack : MonoBehaviour
 
     public void SetEnemyAttack(EnemyType enemyAttack) => enemyTypeAttack = enemyAttack;
 
+    public void OnAttackMelee() => canAttkMelee = Time.time - lastTimeAttkMelee >= timerAttkMelee;
+
     public void ShootCloseOnTarget(PlayerController pc)
     {
         if (pc == null) return;
-        EnemyBullet bullet = Instantiate(bulletPreFab,transform.position,Quaternion.identity);
+        EnemyBullet bullet = Instantiate(bulletPreFab,transform.position,Quaternion.identity,transform);
 
         Vector3 randomPos = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3));
         Vector3 randomPosTarget = pc.transform.position + randomPos;    
@@ -70,25 +68,21 @@ public class EnemyAttack : MonoBehaviour
         life.AddHp(-life.life);
     }
 
-    public void OnAttackMelee() => canAttkMelee = Time.time - lastTimeAttkMelee >= timerAttkMelee;
-
     private void DoDamageToPlayerOnSuicide(Collision2D collision,int damage)
     {
-        if (playerController != null) 
-        lifeController = collision.collider.GetComponent<LifeController>();
+        PlayerController player = GetComponent<PlayerController>();
+        if (player == null) return;
+        LifeController lifeController = player.GetComponent<LifeController>();
 
-        lifeController.AddHp(-damageExplosion);
+        lifeController.AddHp(-damage);
         enemyAudio.AttkSuicideSound();
-        Debug.Log("Make Damage on Touch " + damage);
     }
     private void DoDamageToPlayerAttckMelee(Collider2D collider, int damage)
     {
-        if (playerController != null) 
-        lifeController = collider.GetComponent<LifeController>();
+        LifeController lifeController = collider.GetComponent<LifeController>();
 
-        lifeController.AddHp(-damageMelee);
+        lifeController.AddHp(-damage);
         enemyAudio.AttkMeleeSound();
-        Debug.Log("Make Damage on Touch " + damage);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -112,6 +106,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerController pc = collider.GetComponent<PlayerController>();
+        Debug.Log(collider);
         if (pc == null) return;
 
         DoDamageToPlayerAttckMelee(collider, damageMelee);

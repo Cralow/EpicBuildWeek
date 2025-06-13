@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: damageMelee
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 461492927022859880, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: attkMeleeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 210b9a7b0a73f7a4288cc516afd9a8a0, type: 3}
     - target: {fileID: 1667796993472118895, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -22,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 778dc8aef6287104cbca1e8c04927cac, type: 2}
     - target: {fileID: 4049752333521295598, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.693371
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4049752333521295598, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5789547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4049752333521295598, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -83,10 +87,14 @@ PrefabInstance:
     - target: {fileID: 6353528561856617926, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 887015444, guid: 6ee0ca78720e140469093a80cefc57d5, type: 3}
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6353528561856617926, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353528561856617926, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6353528561856617926, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Color.r
@@ -106,6 +114,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7557168852400043966, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

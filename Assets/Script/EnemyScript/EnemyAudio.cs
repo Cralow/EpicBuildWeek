@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAudio : MonoBehaviour
-{
-    [SerializeField] private AudioSource audioSource;
+{   
     [SerializeField] private AudioClip breathSound;
     [SerializeField] private AudioClip attkMeleeSound;
     [SerializeField] private AudioClip attkSuicedeSound;
+
+    private AudioSource audioSource;
 
     private void Awake()
     {

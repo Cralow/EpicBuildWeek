@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6762595149544815265
+--- !u!1 &245187452172758876
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1957007106702258145}
-  - component: {fileID: 6353528561856617926}
-  - component: {fileID: 1667796993472118895}
-  m_Layer: 11
-  m_Name: RefEnemy
+  - component: {fileID: 2897807301854422723}
+  - component: {fileID: 9036956665813000651}
+  m_Layer: 0
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1957007106702258145
+--- !u!4 &2897807301854422723
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762595149544815265}
+  m_GameObject: {fileID: 245187452172758876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +32,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4049752333521295598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6353528561856617926
+--- !u!212 &9036956665813000651
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762595149544815265}
+  m_GameObject: {fileID: 245187452172758876}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,38 +73,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2018812494, guid: 6505114352f41ac46a6651a8c55b9ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.45000002, y: 0.5502973}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1667796993472118895
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762595149544815265}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 98333a7995365c445b7c86e9c42d300b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7557168852400043966
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1957007106702258145}
+  - {fileID: 2897807301854422723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1764262786263953822
@@ -231,7 +209,6 @@ MonoBehaviour:
   speedBullet: 5
   fireRate: 0.5
   damageExplosion: 20
-  playerController: {fileID: 0}
 --- !u!114 &461492927022859880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f1fb2b8bf8b6945af3f934f937ba04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   breathSound: {fileID: 0}
   attkMeleeSound: {fileID: 0}
   attkSuicedeSound: {fileID: 0}
@@ -260,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94e1968c92274e4097b8bf3fb0a7225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 5
+  maxLife: 100
   lifeBehaviour: 0
 --- !u!82 &6686106797861104516
 AudioSource:
@@ -274,7 +250,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -283,7 +259,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1.01
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -456,7 +432,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557168852400043966}
   m_Enabled: 1
-  m_SortingLayerID: -1270965945
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 122282211
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_SortAtRoot: 0
