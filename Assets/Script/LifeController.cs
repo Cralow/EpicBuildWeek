@@ -23,7 +23,11 @@ public class LifeController : MonoBehaviour
 
             lifeBehaviour = LIFE_BEHAVIOUR.DESTROY;
             //animazione death comune enemys e player
-           // GetComponent<Animator>().Play("Death");
+            if (!isEnemy)
+            {
+
+            GetComponent<Animator>().Play("Death");
+            }
             
         }
 
@@ -41,7 +45,12 @@ public class LifeController : MonoBehaviour
             {
 
                 //animazione di danno comune a enemys e player
-                // GetComponent<Animator>().Play("Hitted");
+                if (!isEnemy)
+                {
+
+                GetComponent<Animator>().Play("Hitted");
+                    
+                }
             }
 
 
