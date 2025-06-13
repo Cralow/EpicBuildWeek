@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: enemyTypeMovement
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1232965136219885652, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 778dc8aef6287104cbca1e8c04927cac, type: 2}
     - target: {fileID: 1319196151356591847, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.9999995
@@ -156,6 +160,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5880206410853422257, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880206410853422257, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880206410853422257, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5952026436927725466, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
       propertyPath: m_Name
       value: Enemy Range
@@ -196,6 +212,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8508019951626649789, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8508019951626649789, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
       propertyPath: m_Color.b
       value: 1
