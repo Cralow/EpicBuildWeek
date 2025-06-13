@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float minCircleRadius = 4f;
     [SerializeField] private float maxCircleRadius = 10f;
 
-    public Vector2 direction {  get; private set; }
+    public Vector2 Direction {  get; private set; }
     private Vector3 setCicle;
 
     private Rigidbody2D rb;
@@ -53,9 +53,9 @@ public class EnemyMovement : MonoBehaviour
                                                   0);// Z
 
         Vector3 posTarget = posPlayer + setCicle;
-        direction = (posTarget - transform.position).normalized;
+        Direction = (posTarget - transform.position).normalized;
 
-        rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + Direction * (speed * Time.fixedDeltaTime));
         angle += Time.fixedDeltaTime * rotationSpeed;
     }
     public void MoveOnPosition(PlayerController pc)
@@ -72,17 +72,17 @@ public class EnemyMovement : MonoBehaviour
         Vector2 posTargetAround = (posPlayerAround - transform.position).normalized;
         float dist = Vector2.Distance(transform.position, posPlayer);
 
-        direction = dist >= maxDistanceTarget + 1 == true? posTargetAround : posTarget;
+        Direction = dist >= maxDistanceTarget + 1 == true? posTargetAround : posTarget;
 
-        if (dist >= maxDistanceTarget + 1) rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
-        if (dist <= minDistanceTarget - 1) rb.MovePosition(rb.position - direction * (speed * Time.fixedDeltaTime));
+        if (dist >= maxDistanceTarget + 1) rb.MovePosition(rb.position + Direction * (speed * Time.fixedDeltaTime));
+        if (dist <= minDistanceTarget - 1) rb.MovePosition(rb.position - Direction * (speed * Time.fixedDeltaTime));
     }
     public void MoveOnTarget(PlayerController pc)
     {
         if (pc == null) return;
 
-        direction = (pc.transform.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * (speed * Time.fixedDeltaTime));
+        Direction = (pc.transform.position - transform.position).normalized;
+        rb.MovePosition(rb.position + Direction * (speed * Time.fixedDeltaTime));
     }
     private void RandomVelocity()
     {
