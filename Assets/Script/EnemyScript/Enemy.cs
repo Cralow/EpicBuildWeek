@@ -11,11 +11,13 @@ public class Enemy : MonoBehaviour
     private EnemyMovement enemyMovement;
     private EnemyAttack enemyAttack;
     private PlayerController playerController;
+    private Animator animator;
 
     private void Start()
     {
         enemyMovement = GetComponent<EnemyMovement>();
         enemyAttack = GetComponent<EnemyAttack>();
+        animator = GetComponent<Animator>();
 
         playerController = FindAnyObjectByType<PlayerController>();
 
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("xDir", enemyMovement.Direction.x);
         EnemyLogicAttack();
     }
     private void FixedUpdate()
