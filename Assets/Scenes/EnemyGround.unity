@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistola
       objectReference: {fileID: 0}
+    - target: {fileID: 513743835745579868, guid: 5a90fbce27bcbf145b2d53f33d398bea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5251649661092214540, guid: 5a90fbce27bcbf145b2d53f33d398bea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5428922
@@ -231,6 +235,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8475317428516773752, guid: c02aaea87632ee745a79d56d348b4ff1, type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475317428516773752, guid: c02aaea87632ee745a79d56d348b4ff1, type: 3}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 5522203649105494333, guid: 8357e65b6c5e29e4db58cba276d3dae2, type: 3}
+    - target: {fileID: 8475317428516773752, guid: c02aaea87632ee745a79d56d348b4ff1, type: 3}
+      propertyPath: enemyPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 7777829698985214141, guid: 01d83f149c80c4c4193add3a1628552e, type: 3}
+    - target: {fileID: 8475317428516773752, guid: c02aaea87632ee745a79d56d348b4ff1, type: 3}
+      propertyPath: enemyPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 4129111738700653751, guid: 8dcd4e30c18b9ae428e31896994ee48f, type: 3}
+    - target: {fileID: 8475317428516773752, guid: c02aaea87632ee745a79d56d348b4ff1, type: 3}
+      propertyPath: enemyPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 5952026436927725466, guid: 904d703469bba1244b4cdd0a2b257ae6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -413,6 +437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fucile
       objectReference: {fileID: 0}
+    - target: {fileID: 4646481394557225976, guid: c0f12e8f8d6da5648ae10d23c91a97ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4910379843533798049, guid: c0f12e8f8d6da5648ae10d23c91a97ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.868521
@@ -514,6 +542,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6724487357305858301, guid: 8357e65b6c5e29e4db58cba276d3dae2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 778dc8aef6287104cbca1e8c04927cac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

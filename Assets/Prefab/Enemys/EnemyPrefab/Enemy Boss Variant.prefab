@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: attkMeleeSound
       value: 
       objectReference: {fileID: 8300000, guid: 210b9a7b0a73f7a4288cc516afd9a8a0, type: 3}
+    - target: {fileID: 1412128068503682133, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412128068503682133, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412128068503682133, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1667796993472118895, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -24,6 +36,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 778dc8aef6287104cbca1e8c04927cac, type: 2}
+    - target: {fileID: 2897807301854422723, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897807301854422723, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897807301854422723, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.49999997
+      objectReference: {fileID: 0}
     - target: {fileID: 4049752333521295598, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -64,6 +88,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217090133809117426, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217090133809117426, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217090133809117426, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413860986745380736, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: color.b
+      value: 0.37613258
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413860986745380736, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413860986745380736, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: color.r
+      value: 0.19339621
+      objectReference: {fileID: 0}
     - target: {fileID: 4413860986745380736, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: enemyTypeAttack
       value: 4
@@ -71,6 +119,18 @@ PrefabInstance:
     - target: {fileID: 4413860986745380736, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: enemyTypeMovement
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506533021971933337, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506533021971933337, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506533021971933337, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586789960478401328, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Layer
@@ -104,6 +164,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7151613460368936428, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151613460368936428, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7557168852400043966, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Name
       value: Enemy Boss Variant
@@ -116,13 +184,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8723637824733961854, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 778dc8aef6287104cbca1e8c04927cac, type: 2}
+    - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1862687377, guid: 53914905ff83eb74484d97b589b9758b, type: 3}
     - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036956665813000651, guid: b0f0829c33a25cd49b708fe00bcefb43, type: 3}
       propertyPath: m_Color.r
