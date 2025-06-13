@@ -39,7 +39,8 @@ public class Arma : MonoBehaviour
         FindNearestEnemy();
         if (savedEnemyObj != null)
         {
-            var a = Instantiate(bullet, transform);
+            var a = Instantiate(bullet);
+            a.transform.position = transform.position;
             Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
             a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
 
