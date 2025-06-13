@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -51,6 +52,21 @@ public class PlayerController : MonoBehaviour
             item.layer = 3;
 
            Destroy(collision.gameObject);   
+
+            if(collision.collider.GetComponentInChildren<Fucile>() != null)
+            {
+                collision.collider.GetComponentInChildren<Fucile>().isEquipped = true;
+            }
+            if (collision.collider.GetComponentInChildren<FucileAPompa>() != null)
+            {
+                collision.collider.GetComponentInChildren<FucileAPompa>().isEquipped = true;
+            }
+            if (collision.collider.GetComponentInChildren<FucileAPompa>() != null)
+            {
+                collision.collider.GetComponentInChildren<FucileAPompa>().isEquipped = true;
+            }
+
+
         }
     }
 

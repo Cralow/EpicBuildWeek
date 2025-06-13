@@ -16,7 +16,18 @@ public class Arma : MonoBehaviour
     public float gunDamage;
     public float shootForce;
 
+    public bool isEquipped;
+    public Animator anim;
 
+
+    public void PlayAttackAnim()
+    {
+        anim.Play("Attack");
+    }
+    private void Start()
+    {
+        anim = GetComponentInParent<Animator>();
+    }
     void Update()
     {
         fireCoolDown -= Time.deltaTime;
@@ -36,17 +47,20 @@ public class Arma : MonoBehaviour
     }
     public virtual void Shoot()
     {
-        FindNearestEnemy();
-        if (savedEnemyObj != null)
+        if (isEquipped)
         {
-            var a = Instantiate(bullet);
-            a.transform.position = transform.position;
-            Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
-            a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
+            FindNearestEnemy();
+            if (savedEnemyObj != null)
+            {
+                var a = Instantiate(bullet);
+                PlayAttackAnim();
+                a.transform.position = transform.position;
+                Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
+                a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
 
 
+            }
         }
-
 
     }
 
@@ -75,6 +89,7 @@ public class Arma : MonoBehaviour
                         distanza2 = distanzaAttuale;
 
                         savedEnemyObj = go;
+                        
 
                     }
                     else

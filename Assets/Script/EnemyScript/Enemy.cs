@@ -26,8 +26,10 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(animator != null) animator.SetFloat("xDir" , enemyMovement.Direction.x);
-        if (animator != null) animator.SetFloat("yDir", enemyMovement.Direction.y);
+    //    if (animator != null)
+    //    {
+    //        animator.SetFloat("xDir", enemyMovement.Direction.x);
+    //    }
 
         EnemyLogicAttack();
     }

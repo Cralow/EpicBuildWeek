@@ -15,8 +15,9 @@ public class Fucile : Arma
     {
         FindNearestEnemy();
 
-        if (savedEnemyObj != null)
+        if (savedEnemyObj != null && isEquipped)
         {
+            PlayAttackAnim();
             for (int i = 0; i < 3; i++)
             {
 

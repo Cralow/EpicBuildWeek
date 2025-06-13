@@ -106,7 +106,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerController pc = collider.GetComponent<PlayerController>();
-        Debug.Log(collider);
+
         if (pc == null) return;
 
         DoDamageToPlayerAttckMelee(collider, damageMelee);
