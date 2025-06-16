@@ -272,6 +272,8 @@ MonoBehaviour:
   fireCoolDown: 2
   gunDamage: 0
   shootForce: 0
+  isEquipped: 0
+  anim: {fileID: 0}
 --- !u!1 &736073867
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +972,8 @@ MonoBehaviour:
   fireCoolDown: 2
   gunDamage: 5
   shootForce: 5
+  isEquipped: 0
+  anim: {fileID: 0}
   pelletsPerShot: 7
   spreadAngle: 100
 --- !u!1 &2040053428
@@ -1209,6 +1213,26 @@ PrefabInstance:
     - target: {fileID: 2980859588397936244, guid: 147ad4870b86ad741b972301a078675d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543391730018537534, guid: 147ad4870b86ad741b972301a078675d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.43005633
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543391730018537534, guid: 147ad4870b86ad741b972301a078675d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.47019303
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543391730018537534, guid: 147ad4870b86ad741b972301a078675d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0040136576
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543391730018537534, guid: 147ad4870b86ad741b972301a078675d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839574793645781184, guid: 147ad4870b86ad741b972301a078675d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7902401696544273774, guid: 147ad4870b86ad741b972301a078675d, type: 3}
       propertyPath: m_LocalPosition.x

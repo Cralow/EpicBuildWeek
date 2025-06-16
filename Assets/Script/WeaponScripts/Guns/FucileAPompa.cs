@@ -11,22 +11,29 @@ public class FucileAPompa : Arma
     {
         FindNearestEnemy();
 
-        if (savedEnemyObj == null || isEquipped) return;
-
-
-        Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
-        PlayAttackAnim();
-        for (int i = 0; i < pelletsPerShot; i++)
+        if (savedEnemyObj == null || !isEquipped)
+        {
+            return;
+        }
+        else
         {
 
 
-            Vector2 spreadDir = Quaternion.Euler(Random.Range(-spreadAngle * 2f, spreadAngle * 2f), Random.Range(-spreadAngle * 2f, spreadAngle * 2f), transform.position.z) * fireDirection;
 
-            var a = Instantiate(bullet);
+            Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
             PlayAttackAnim();
-            a.transform.position = transform.position;
+            for (int i = 0; i < pelletsPerShot; i++)
+            {
 
-            a.GetComponent<Rigidbody2D>().AddForce(spreadDir.normalized * shootForce, ForceMode2D.Impulse);
+
+                Vector2 spreadDir = Quaternion.Euler(Random.Range(-spreadAngle * 2f, spreadAngle * 2f), Random.Range(-spreadAngle * 2f, spreadAngle * 2f), transform.position.z) * fireDirection;
+
+                var a = Instantiate(bullet);
+                PlayAttackAnim();
+                a.transform.position = transform.position;
+
+                a.GetComponent<Rigidbody2D>().AddForce(spreadDir.normalized * shootForce, ForceMode2D.Impulse);
+            }
         }
     }
 }

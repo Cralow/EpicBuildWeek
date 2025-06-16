@@ -47,13 +47,14 @@ public class CameraSpawner : MonoBehaviour
         public void SpawnRandomPosition()
         {
             var a = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)]);
-            a.transform.position = spawnerlist[Random.Range(0, spawnerlist.Length)].transform.position;
-         
+        a.transform.position = spawnerlist[Random.Range(0, spawnerlist.Length)].transform.position + Vector3.forward;
 
 
 
 
-        }
+
+
+    }
     
 
 }

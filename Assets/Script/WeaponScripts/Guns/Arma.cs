@@ -22,7 +22,11 @@ public class Arma : MonoBehaviour
 
     public void PlayAttackAnim()
     {
-        anim.Play("Attack");
+        if(anim != null)
+        {
+
+        anim.Play("Attack");    
+        }
     }
     private void Start()
     {
@@ -53,7 +57,6 @@ public class Arma : MonoBehaviour
             if (savedEnemyObj != null)
             {
                 var a = Instantiate(bullet);
-                PlayAttackAnim();
                 a.transform.position = transform.position;
                 Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
                 a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
@@ -89,6 +92,7 @@ public class Arma : MonoBehaviour
                         distanza2 = distanzaAttuale;
 
                         savedEnemyObj = go;
+                     //   PlayAttackAnim();
                         
 
                     }

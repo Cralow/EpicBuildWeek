@@ -53,17 +53,17 @@ public class PlayerController : MonoBehaviour
 
            Destroy(collision.gameObject);   
 
-            if(collision.collider.GetComponentInChildren<Fucile>() != null)
+            if(wH.GetComponentInChildren<Fucile>() != null)
             {
-                collision.collider.GetComponentInChildren<Fucile>().isEquipped = true;
+                wH.GetComponentInChildren<Fucile>().isEquipped = true;
             }
-            if (collision.collider.GetComponentInChildren<FucileAPompa>() != null)
+            if (wH.GetComponentInChildren<FucileAPompa>() != null)
             {
-                collision.collider.GetComponentInChildren<FucileAPompa>().isEquipped = true;
+                wH.GetComponentInChildren<FucileAPompa>().isEquipped = true;
             }
-            if (collision.collider.GetComponentInChildren<FucileAPompa>() != null)
+            if (wH.GetComponentInChildren<FucileAPompa>() != null)
             {
-                collision.collider.GetComponentInChildren<FucileAPompa>().isEquipped = true;
+                wH.GetComponentInChildren<FucileAPompa>().isEquipped = true;
             }
 
 

@@ -20,10 +20,16 @@ public class Fucile : Arma
             PlayAttackAnim();
             for (int i = 0; i < 3; i++)
             {
+                if (!savedEnemyObj)
+                {
+                    i--;
+                    yield return null;
+                    continue;
 
+                }
+                Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
                 var a = Instantiate(bullet);
                 a.transform.position = transform.position;
-                Vector2 fireDirection = savedEnemyObj.transform.position - transform.position;
                 a.GetComponent<Rigidbody2D>().AddForce(fireDirection.normalized * shootForce, ForceMode2D.Impulse);
 
                 yield return new WaitForSeconds(burstDelay);
